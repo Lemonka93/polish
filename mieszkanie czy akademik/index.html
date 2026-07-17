@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mieszkanie</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="task task-1">
+        <header class="task-header">
+          <div class="task-number">1</div>
+          <h1>
+            Proszę uzupełnić tabelę słowami związanymi z tematem
+            <em>mieszkanie</em>. Potem proszę porównać swoje propozycje z
+            propozycjami koleżanki / kolegi i dopisać brakujące słowa.
+          </h1>
+        </header>
+
+        <section class="table-wrap">
+          <table class="exercise-table">
+            <thead>
+              <tr>
+                <th class="col-warm">Jakie są pomieszczenia w mieszkaniu?</th>
+                <th class="col-cool">
+                  Jakie meble, sprzęty i urządzenia są w tych pomieszczeniach?
+                </th>
+                <th class="col-warm">Jakie mogą być te pomieszczenia?</th>
+                <th class="col-cool">Co można robić w tych pomieszczeniach?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  class="answer-cell"
+                  data-answer="kuchnia"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="lodówka, kuchenka, stół, krzesła, szafki"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td>przestronna, jasna, mała, nowoczesna</td>
+                <td>gotować, jeść, pić kawę, rozmawiać</td>
+              </tr>
+              <tr>
+                <td>sypialnia</td>
+                <td
+                  class="answer-cell"
+                  data-answer="łóżko, szafa, stolik nocny, lampka"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="cicha, przytulna, jasna, wygodna"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="spać, odpoczywać, czytać książkę"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="answer-cell"
+                  data-answer="salon"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td>sofa, telewizor, stolik, regał</td>
+                <td
+                  class="answer-cell"
+                  data-answer="duży, jasny, wygodny, nowoczesny"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="oglądać telewizję, odpoczywać, rozmawiać"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+              </tr>
+              <tr>
+                <td>łazienka</td>
+                <td
+                  class="answer-cell"
+                  data-answer="wanna, prysznic, umywalka, lustro, pralka"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="mała, czysta, jasna, nowoczesna"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="myć się, brać prysznic, prać"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="answer-cell"
+                  data-answer="pokój dziecięcy"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td>
+                  łóżeczko dziecięce, pojemnik na zabawki, biurko, krzesło
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="kolorowy, jasny, mały, przytulny"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="bawić się, spać, uczyć się"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+              </tr>
+              <tr>
+                <td>korytarz</td>
+                <td
+                  class="answer-cell"
+                  data-answer="szafa, wieszak, lustro, półka na buty"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="wąski, długi, jasny, mały"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+                <td
+                  class="answer-cell"
+                  data-answer="wchodzić, wychodzić, zdejmować buty"
+                  aria-label="Pokaż odpowiedź"
+                >
+                  …
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="controls">
+          <button id="showAllButton" type="button">
+            Pokaż wszystkie odpowiedzi
+          </button>
+          <button id="hideAllButton" type="button">
+            Ukryj wszystkie odpowiedzi
+          </button>
+          <button id="resetButton" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="task task-2">
+        <header class="task-header">
+          <div class="task-number">2</div>
+          <div class="task-title-group">
+            <h2 class="task-title">
+              Kuba niedługo zaczyna studia we Wrocławiu, dlatego szuka pokoju do
+              wynajęcia.
+            </h2>
+            <p class="task-subtitle">
+              <span class="task-letter">A.</span>
+              Proszę dopasować ogłoszenia do fotografii. Proszę uzasadnić swój
+              wybór.
+            </p>
+          </div>
+        </header>
+
+        <div class="photos-section">
+          <div class="photos-grid">
+            <figure class="photo-card">
+              <span class="photo-number">1</span>
+              <img src="img/1.png" alt="Pokój z łóżkiem piętrowym" />
+            </figure>
+            <figure class="photo-card">
+              <span class="photo-number">2</span>
+              <img src="img/2.png" alt="Mikroapartament z aneksem kuchennym" />
+            </figure>
+            <figure class="photo-card">
+              <span class="photo-number">3</span>
+              <img src="img/3.png" alt="Pokój z dwoma łóżkami" />
+            </figure>
+          </div>
+
+          <aside class="kuba-card">
+            <img src="img/4.png" alt="Kuba, student" />
+            <p>
+              To jest Kuba, student pierwszego roku filologii klasycznej, który
+              szuka mieszkania we Wrocławiu.
+            </p>
+          </aside>
+        </div>
+
+        <div class="ads-grid">
+          <article class="ad-card">
+            <h3>
+              <span class="task-letter">A.</span> Do wynajęcia wygodny
+              mikroapartament
+            </h3>
+            <p>
+              Do wynajęcia wygodny mikroapartament w centrum Wrocławia (blisko
+              Placu Grunwaldzkiego). Jasny pokój z aneksem kuchennym, łazienka
+              (prysznic, WC, umywalka) i mały przedpokój (wszystko razem: 18
+              m²). Szóste piętro, jest winda. Z balkonu widać rzekę i pobliski
+              park. Ogrzewanie miejskie. Klimatyzacja. Opłaty: 1200 zł + prąd,
+              woda, internet (około 300 zł miesięcznie). Cena do negocjacji.
+              Zapraszamy do oglądania. Tel: 678123456 (proszę dzwonić po 16:00).
+            </p>
+          </article>
+
+          <article class="ad-card">
+            <h3><span class="task-letter">B.</span> Szukamy współlokatora</h3>
+            <p>
+              Szukamy współlokatora do trzypokojowego mieszkania studenckiego.
+              Jest wolne miejsce w dużym pokoju dwuosobowym (14 m²). Mieszkanie
+              przestronne i słoneczne, duża kuchnia, łazienka (wanna, umywalka)
+              i toaleta osobno. Wysoki parter. Blisko sklepy i punkty usługowe.
+              Niedaleko przystanek tramwajowy, z którego w 10 min można dostać
+              się na uniwersytet i na politechnikę. Cena: 650 zł / miesiąc +
+              woda, prąd, gaz (według zużycia) + internet. Tel. 796588321.
+            </p>
+          </article>
+
+          <article class="ad-card">
+            <h3><span class="task-letter">C.</span> Prywatny akademik</h3>
+            <p>
+              Zaczynasz studia we Wrocławiu, a nie masz jeszcze dachu nad
+              głową*? Nie martw się! Właśnie otworzyliśmy dla Ciebie prywatny
+              akademik. Wygodne i duże pokoje jedno- i dwuosobowe z prywatnymi
+              lub dzielonymi łazienkami. W pokojach dwuosobowych łóżka piętrowe.
+              Wspólne kuchnie na korytarzu. Na parterze siłownia i mała
+              kawiarnia. Doskonała lokalizacja - blisko dworca PKP. W pobliżu
+              galeria handlowa, sklepy, punkty usługowe, restauracje i bary.
+              Ceny od 800 zł (pokój dwuosobowy) do 1400 zł (pokój jednoosobowy o
+              podwyższonym standardzie). Zapraszamy do oglądania. Tel.
+              669125477.
+            </p>
+          </article>
+        </div>
+
+        <div class="idiom-box">
+          <span class="idiom-label">IDIOM</span>
+          <p>
+            * mieć dach nad głową - mieć gdzie mieszkać; mieć dom, mieszkanie
+          </p>
+        </div>
+
+        <!-- <section class="questions-section">
+          <p class="task-subtitle"><span class="task-letter">B.</span> Proszę odpowiedzieć na pytania:</p>
+          <div class="questions-grid">
+            <ol class="questions-list" type="a">
+              <li>Gdzie znajduje się akademik?</li>
+              <li>Ile metrów kwadratowych (m²) ma mikroapartament?</li>
+              <li>Ile pokoi ma mieszkanie studenckie?</li>
+              <li>Które lokum ma wannę?</li>
+              <li>W którym budynku jest winda?</li>
+            </ol>
+            <ol class="questions-list" type="a" start="6">
+              <li>Gdzie są łóżka piętrowe?</li>
+              <li>Skąd jest piękny widok?</li>
+              <li>Która oferta jest do negocjacji?</li>
+              <li>Gdzie jest sala, w której można trenować?</li>
+              <li>Skąd jest blisko na dwie uczelnie?</li>
+            </ol>
+          </div>
+        </section> -->
+
+        <!-- <div class="speaking-box">
+          <p>Proszę powiedzieć, jakie są plusy i minusy każdej z tych ofert.</p>
+          <p>Jak pani / pan myśli, która oferta jest idealna dla Kuby? Dlaczego?</p>
+          <p>A która oferta jest najbardziej atrakcyjna dla pani / pana? Dlaczego?</p>
+        </div> -->
+      </section>
+
+      <section class="task task-3">
+        <header class="task-header">
+          <div class="task-number">3</div>
+          <div class="task-title-group">
+            <h2 class="task-title">
+              Jakie jest pani / pana mieszkanie?<br />
+              Proszę opowiedzieć, jakie są:
+            </h2>
+          </div>
+        </header>
+
+        <ul class="speech-list">
+          <li>lokalizacja,</li>
+          <li>wielkość,</li>
+          <li>liczba pokoi,</li>
+          <li>wyposażenie.</li>
+        </ul>
+      </section>
+
+      <section class="task task-4">
+        <header class="task-header">
+          <div class="task-number">4</div>
+          <div class="task-title-group">
+            <h2 class="task-title">
+              Kuba dzwoni do właściciela mieszkania trzypokojowego (z oferty B),
+              żeby zapytać o szczegóły wynajmu.
+            </h2>
+            <p class="task-subtitle">
+              <span class="task-letter">A.</span>
+              Proszę przeczytać rozmowę Kuby z właścicielem i uzupełnić ją
+              pytaniami z ramki.
+            </p>
+          </div>
+        </header>
+
+        <div class="task4Layout">
+          <div class="task4DialogColumn">
+            <div class="task4Dialogue">
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="1"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>Tak, miejsce w pokoju jest nadal wolne.</p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="2"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>
+                  Mieszkanie znajduje się na ulicy Kochanowskiego, niedaleko
+                  centrum handlowego Korona.
+                </p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="3"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>Mieszkanie ma 62 m².</p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="4"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>
+                  W mieszkaniu są trzy pokoje, kuchnia, łazienka, toaleta i mały
+                  przedpokój.
+                </p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="5"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>Tak, to są oddzielne pomieszczenia.</p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="6"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>
+                  Nie, w łazience jest wanna, umywalka i pralka. Są też szafki
+                  na kosmetyki.
+                </p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="7"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>
+                  Koszt wynajmu dla jednej osoby to 650 zł miesięcznie plus
+                  opłaty za wodę, prąd i gaz. Razem to jest około 800 zł
+                  miesięcznie.
+                </p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="8"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>
+                  Nie, internet nie jest wliczony w czynsz. Trzeba płacić
+                  osobno.
+                </p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="9"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>
+                  Można obejrzeć pokój nawet dzisiaj, ale po godzinie 18:30.
+                </p>
+              </div>
+
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <span class="task4DropZone" data-slot="10"></span>
+              </div>
+              <div class="task4Line">
+                <span class="task4Dash">–</span>
+                <p>Oczywiście, w takim razie do zobaczenia o 19:00.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="task4QuestionsColumn">
+            <div class="task4QuestionsBox" id="task4QuestionsBox"></div>
+          </aside>
+        </div>
+
+        <div class="task4Actions">
+          <button id="checkTask4" type="button">Sprawdź</button>
+          <button id="showTask4Answers" type="button">Pokaż odpowiedzi</button>
+          <button id="resetTask4" type="button">Reset</button>
+        </div>
+
+        <div class="task4Result" id="task4Result"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
