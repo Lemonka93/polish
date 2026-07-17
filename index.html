@@ -1,402 +1,237 @@
-<!doctype html><meta charset="utf-8" /><meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
-/><title>Polish Time Trainer</title>
-<style>
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    background: #eef2e7;
-    font-family: system-ui, sans-serif;
-    color: #2a2418;
-    padding: 18px;
-  }
-  .app {
-    width: min(760px, 100%);
-    background: #fff5d8;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 18px 38px #0002;
-  }
-  .top {
-    background: #f7b718;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-weight: 900;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-  }
-  .box {
-    padding: 32px;
-    text-align: center;
-  }
-  .label {
-    color: #7a6a46;
-    font-weight: 900;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-  }
-  .time {
-    font-size: clamp(64px, 16vw, 120px);
-    font-weight: 950;
-    margin: 18px 0;
-    line-height: 1;
-  }
-  .answer {
-    min-height: 150px;
-    display: grid;
-    align-content: center;
-    gap: 14px;
-    margin: 18px 0;
-    padding: 22px;
-    border: 2px dashed #7a6a4640;
-    border-radius: 18px;
-    background: #fff8;
-  }
-  .placeholder {
-    font-size: 21px;
-    color: #7a6a46;
-    font-weight: 800;
-    line-height: 1.35;
-  }
-  .row {
-    display: grid;
-    grid-template-columns: 95px 1fr;
-    gap: 12px;
-    text-align: left;
-    font-size: clamp(20px, 4vw, 30px);
-    align-items: start;
-  }
-  .fmt {
-    font-weight: 900;
-    color: #7a6a46;
-  }
-  .txt {
-    font-weight: 850;
-    line-height: 1.35;
-    overflow-wrap: anywhere;
-  }
-  .red {
-    color: #d81f1f;
-  }
-  .green {
-    color: #179a59;
-  }
-  button {
-    width: 100%;
-    border: 0;
-    border-radius: 16px;
-    background: #2a2418;
-    color: white;
-    font-size: 24px;
-    font-weight: 900;
-    padding: 20px;
-    min-height: 64px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .opts {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 18px;
-    color: #7a6a46;
-    font-weight: 750;
-    text-align: left;
-  }
-  .opt {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 14px;
-    border: 1px solid #7a6a4630;
-    border-radius: 14px;
-    background: #fff8;
-    line-height: 1.3;
-  }
-  .opt input {
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    flex: 0 0 auto;
-  }
-  .hint {
-    margin-top: 18px;
-    color: #7a6a46;
-    font-size: 15px;
-    line-height: 1.4;
-  }
-  @media (max-width: 520px) {
-    body {
-      display: block;
-      min-height: auto;
-      padding: 12px;
-    }
-    .app {
-      border-radius: 18px;
-    }
-    .box {
-      padding: 20px 14px;
-    }
-    .top {
-      padding: 12px 10px;
-      font-size: 13px;
-      letter-spacing: 0.18em;
-    }
-    .label {
-      font-size: 13px;
-      letter-spacing: 0.14em;
-    }
-    .time {
-      font-size: clamp(52px, 22vw, 84px);
-      margin: 14px 0;
-    }
-    .answer {
-      min-height: 132px;
-      padding: 16px 14px;
-      margin: 14px 0;
-      border-radius: 16px;
-    }
-    .placeholder {
-      font-size: 18px;
-    }
-    .row {
-      grid-template-columns: 1fr;
-      gap: 6px;
-      text-align: center;
-      font-size: clamp(18px, 5.5vw, 24px);
-    }
-    .fmt {
-      font-size: 14px;
-    }
-    button {
-      font-size: 20px;
-      padding: 16px;
-      border-radius: 14px;
-    }
-    .opts {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-    .opt {
-      padding: 12px;
-    }
-    .hint {
-      font-size: 14px;
-    }
-  }
-</style>
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Interaktywne ćwiczenia do nauki języka polskiego."
+    />
+    <title>Polski — interaktywne ćwiczenia</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #203029;
+        --muted: #64726b;
+        --paper: #fffdf7;
+        --green: #1d7957;
+        --green-dark: #14553e;
+        --yellow: #f2bd3d;
+        --line: #dce4dd;
+      }
 
-<main class="app">
-  <div class="top">Trzeba pamiętać</div>
-  <section class="box">
-    <div class="label">O której godzinie?</div>
-    <div id="time" class="time"></div>
-    <div id="answer" class="answer"></div>
-    <button id="btn"></button>
-    <div class="opts">
-      <label class="opt"
-        ><input id="rand" type="checkbox" /> losowe minuty</label
-      ><label class="opt"
-        ><input id="quart" type="checkbox" checked /> tylko 00 / 15 / 30 /
-        45</label
-      >
-    </div>
-    <div class="hint">
-      Первый клик — ответ. Второй клик — следующее время. Работает также Space /
-      Enter.
-    </div>
-  </section>
-</main>
-<script>
-  const $ = (s) => document.querySelector(s);
-  const time = $("#time"),
-    ans = $("#answer"),
-    btn = $("#btn");
-  const rand = $("#rand"),
-    quart = $("#quart");
-  let cur,
-    shown = false;
-  const h24 = [
-    "zerowej",
-    "pierwszej",
-    "drugiej",
-    "trzeciej",
-    "czwartej",
-    "piątej",
-    "szóstej",
-    "siódmej",
-    "ósmej",
-    "dziewiątej",
-    "dziesiątej",
-    "jedenastej",
-    "dwunastej",
-    "trzynastej",
-    "czternastej",
-    "piętnastej",
-    "szesnastej",
-    "siedemnastej",
-    "osiemnastej",
-    "dziewiętnastej",
-    "dwudziestej",
-    "dwudziestej pierwszej",
-    "dwudziestej drugiej",
-    "dwudziestej trzeciej",
-  ];
-  const loc = [
-    "dwunastej",
-    "pierwszej",
-    "drugiej",
-    "trzeciej",
-    "czwartej",
-    "piątej",
-    "szóstej",
-    "siódmej",
-    "ósmej",
-    "dziewiątej",
-    "dziesiątej",
-    "jedenastej",
-  ];
-  const nom = [
-    "dwunasta",
-    "pierwsza",
-    "druga",
-    "trzecia",
-    "czwarta",
-    "piąta",
-    "szósta",
-    "siódma",
-    "ósma",
-    "dziewiąta",
-    "dziesiąta",
-    "jedenasta",
-  ];
-  const m0 = ["zero", "jeden", "dwa"];
-  const ones = [
-    "",
-    "jeden",
-    "dwa",
-    "trzy",
-    "cztery",
-    "pięć",
-    "sześć",
-    "siedem",
-    "osiem",
-    "dziewięć",
-  ];
-  const teens = [
-    "dziesięć",
-    "jedenaście",
-    "dwanaście",
-    "trzynaście",
-    "czternaście",
-  ];
-  teens.push(
-    "piętnaście",
-    "szesnaście",
-    "siedemnaście",
-    "osiemnaście",
-    "dziewiętnaście",
-  );
-  const tens = [
-    "",
-    "",
-    "dwadzieścia",
-    "trzydzieści",
-    "czterdzieści",
-    "pięćdziesiąt",
-  ];
-  function mw(n) {
-    if (n === 0) return "zero";
-    if (n < 10) return ones[n];
-    if (n < 20) return teens[n - 10];
-    return tens[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : "");
-  }
-  function pad(n) {
-    return String(n).padStart(2, "0");
-  }
-  function html(x) {
-    return x.replace(/</g, "&lt;");
-  }
-  function suffix(h) {
-    if (h === 0) return "(w nocy)";
-    if (h < 12) return "(rano)";
-    if (h === 12) return "(w południe)";
-    if (h < 18) return "(po południu)";
-    return "(wieczorem)";
-  }
-  function f24(h, mi) {
-    return mi === 0 ? "o " + h24[h] : "o " + h24[h] + " " + mw(mi);
-  }
-  function f12(h, mi) {
-    let hh = h % 12;
-    if (mi === 0) return "o " + loc[hh] + " " + suffix(h);
-    if (mi === 15)
-      return (
-        "<span class=green>piętnaście po</span> " + loc[hh] + " " + suffix(h)
-      );
-    if (mi === 30)
-      return (
-        "<span class=green>o wpół do</span> " +
-        loc[(hh + 1) % 12] +
-        " " +
-        suffix(h)
-      );
-    if (mi === 45)
-      return (
-        "<span class=green>za piętnaście</span> " +
-        nom[(hh + 1) % 12] +
-        " " +
-        suffix(h)
-      );
-    if (mi < 30) return mw(mi) + " po " + loc[hh] + " " + suffix(h);
-    return "za " + mw(60 - mi) + " " + nom[(hh + 1) % 12] + " " + suffix(h);
-  }
-  function next() {
-    let h = Math.floor(Math.random() * 24),
-      mi;
-    if (quart.checked) mi = [0, 15, 30, 45][Math.floor(Math.random() * 4)];
-    else
-      mi = rand.checked
-        ? Math.floor(Math.random() * 60)
-        : [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55][
-            Math.floor(Math.random() * 12)
-          ];
-    cur = { h, mi };
-    time.textContent = pad(h) + ":" + pad(mi);
-    ans.innerHTML =
-      "<div class=placeholder>Powiedz odpowiedź na głos, potem kliknij</div>";
-    btn.textContent = "Pokaż odpowiedź";
-    shown = false;
-  }
-  function show() {
-    ans.innerHTML =
-      "<div class=row><div class=fmt>24 h</div><div class=txt><span class=red>" +
-      f24(cur.h, cur.mi) +
-      "</span></div></div><div class=row><div class=fmt>12 h</div><div class=txt>" +
-      f12(cur.h, cur.mi) +
-      "</div></div>";
-    btn.textContent = "Następne";
-    shown = true;
-  }
-  function click() {
-    shown ? next() : show();
-  }
-  btn.onclick = click;
-  document.addEventListener("keydown", (e) => {
-    if (e.key === " " || e.key === "Enter") {
-      e.preventDefault();
-      click();
-    }
-  });
-  quart.onchange = () => {
-    if (quart.checked) rand.checked = false;
-  };
-  rand.onchange = () => {
-    if (rand.checked) quart.checked = false;
-  };
-  next();
-</script>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 15%, #f6d66f55 0 9rem, transparent 9.1rem),
+          radial-gradient(circle at 90% 85%, #75bd9a44 0 12rem, transparent 12.1rem),
+          #edf3ed;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      .page {
+        width: min(1080px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: clamp(48px, 8vw, 96px) 0 56px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--green);
+        font-size: 0.8rem;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 720px;
+        margin: 0;
+        font-size: clamp(2.4rem, 7vw, 5rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+      }
+
+      .intro {
+        max-width: 620px;
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.65;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: clamp(40px, 7vw, 72px);
+      }
+
+      .card {
+        position: relative;
+        display: flex;
+        min-height: 310px;
+        flex-direction: column;
+        padding: 28px;
+        overflow: hidden;
+        color: inherit;
+        text-decoration: none;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: 0 16px 40px #20302910;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          border-color 180ms ease;
+      }
+
+      .card::before {
+        position: absolute;
+        top: -42px;
+        right: -42px;
+        width: 130px;
+        height: 130px;
+        background: var(--accent);
+        border-radius: 50%;
+        content: "";
+        opacity: 0.18;
+      }
+
+      .card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 22px 48px #20302920;
+        transform: translateY(-6px);
+      }
+
+      .card:focus-visible {
+        outline: 4px solid #1d795744;
+        outline-offset: 4px;
+      }
+
+      .card:nth-child(1) {
+        --accent: #e5a817;
+      }
+
+      .card:nth-child(2) {
+        --accent: #1d7957;
+      }
+
+      .card:nth-child(3) {
+        --accent: #b95d3c;
+      }
+
+      .number {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        color: white;
+        background: var(--accent);
+        border-radius: 14px;
+        font-weight: 900;
+      }
+
+      h2 {
+        margin: 34px 0 12px;
+        font-size: 1.55rem;
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .open {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: auto;
+        padding-top: 24px;
+        color: var(--green-dark);
+        font-weight: 850;
+      }
+
+      .arrow {
+        font-size: 1.3rem;
+        transition: transform 180ms ease;
+      }
+
+      .card:hover .arrow {
+        transform: translateX(5px);
+      }
+
+      footer {
+        margin-top: 34px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      @media (max-width: 800px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          min-height: 250px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .card,
+        .arrow {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <p class="eyebrow">Język polski · ćwiczenia</p>
+        <h1>Wybierz swój trening</h1>
+        <p class="intro">
+          Trzy interaktywne ćwiczenia, które pomogą utrwalić słownictwo,
+          gramatykę i mówienie po polsku.
+        </p>
+      </header>
+
+      <nav class="cards" aria-label="Lista ćwiczeń">
+        <a class="card" href="./godzina/">
+          <span class="number">01</span>
+          <h2>Która godzina?</h2>
+          <p>Ćwicz podawanie czasu w stylu oficjalnym i potocznym.</p>
+          <span class="open">Rozpocznij <span class="arrow">→</span></span>
+        </a>
+
+        <a class="card" href="./czas%20przesz%C5%82y/">
+          <span class="number">02</span>
+          <h2>Czas przeszły</h2>
+          <p>Utrwal odmianę czasowników w zdaniach z życia codziennego.</p>
+          <span class="open">Rozpocznij <span class="arrow">→</span></span>
+        </a>
+
+        <a class="card" href="./mieszkanie%20czy%20akademik/">
+          <span class="number">03</span>
+          <h2>Mieszkanie czy akademik?</h2>
+          <p>Rozwijaj słownictwo związane z mieszkaniem i wynajmem.</p>
+          <span class="open">Rozpocznij <span class="arrow">→</span></span>
+        </a>
+      </nav>
+
+      <footer>Powodzenia w nauce!</footer>
+    </main>
+  </body>
+</html>
