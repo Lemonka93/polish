@@ -363,3 +363,182 @@ if (
   task4InitEvents();
   task4Reset();
 }
+
+const task5CorrectAnswers = {
+  1: "przestronny",
+  2: "jasny",
+  3: "ciemna",
+  4: "wygodna",
+  5: "wyposażone",
+};
+
+const task5Elements = {
+  wordBox: document.querySelector("#task5WordBox"),
+  blanks: Array.from(document.querySelectorAll(".task5-blank")),
+  checkButton: document.querySelector("#checkTask5"),
+  resetButton: document.querySelector("#resetTask5"),
+  result: document.querySelector("#task5Result"),
+};
+
+let task5SelectedWord = null;
+let task5DraggedWord = null;
+
+function task5ClearFeedback() {
+  task5Elements.blanks.forEach((blank) => {
+    blank.classList.remove("is-correct", "is-wrong", "is-empty");
+  });
+  task5Elements.result.textContent = "";
+}
+
+function task5SelectWord(word) {
+  document.querySelectorAll(".task5-word").forEach((item) => {
+    item.classList.toggle("is-selected", item === word);
+  });
+  task5SelectedWord = word;
+}
+
+function task5MoveWordToBlank(word, blank) {
+  if (!word || !blank) {
+    return;
+  }
+
+  const currentWord = blank.querySelector(".task5-word");
+  if (currentWord && currentWord !== word) {
+    currentWord.classList.remove("is-in-blank");
+    task5Elements.wordBox.append(currentWord);
+  }
+
+  word.classList.add("is-in-blank");
+  blank.append(word);
+  task5SelectWord(null);
+  task5ClearFeedback();
+}
+
+function task5ReturnWordToBox(word) {
+  if (!word) {
+    return;
+  }
+
+  word.classList.remove("is-in-blank");
+  task5Elements.wordBox.append(word);
+  task5SelectWord(null);
+  task5ClearFeedback();
+}
+
+function task5CheckAnswers() {
+  let score = 0;
+
+  task5Elements.blanks.forEach((blank) => {
+    const word = blank.querySelector(".task5-word");
+    const isCorrect = word?.dataset.word === task5CorrectAnswers[blank.dataset.slot];
+
+    blank.classList.remove("is-correct", "is-wrong", "is-empty");
+    if (!word) {
+      blank.classList.add("is-empty");
+    } else if (isCorrect) {
+      blank.classList.add("is-correct");
+      score += 1;
+    } else {
+      blank.classList.add("is-wrong");
+    }
+  });
+
+  task5SelectWord(null);
+  task5Elements.result.textContent = `Wynik: ${score}/5`;
+}
+
+function task5Reset() {
+  task5Elements.blanks.forEach((blank) => {
+    const word = blank.querySelector(".task5-word");
+    if (word) {
+      word.classList.remove("is-in-blank");
+      task5Elements.wordBox.append(word);
+    }
+  });
+  task5SelectWord(null);
+  task5ClearFeedback();
+}
+
+function task5InitEvents() {
+  document.addEventListener("click", (event) => {
+    const word = event.target.closest(".task5-word");
+    if (word) {
+      if (word.closest(".task5-blank")) {
+        task5ReturnWordToBox(word);
+        return;
+      }
+
+      task5SelectWord(task5SelectedWord === word ? null : word);
+      return;
+    }
+
+    const blank = event.target.closest(".task5-blank");
+    if (!blank) {
+      return;
+    }
+
+    if (task5SelectedWord) {
+      task5MoveWordToBlank(task5SelectedWord, blank);
+      return;
+    }
+
+    task5ReturnWordToBox(blank.querySelector(".task5-word"));
+  });
+
+  task5Elements.blanks.forEach((blank) => {
+    blank.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      blank.classList.add("is-drag-over");
+    });
+
+    blank.addEventListener("dragleave", () => {
+      blank.classList.remove("is-drag-over");
+    });
+
+    blank.addEventListener("drop", (event) => {
+      event.preventDefault();
+      blank.classList.remove("is-drag-over");
+      task5MoveWordToBlank(task5DraggedWord, blank);
+    });
+  });
+
+  task5Elements.wordBox.addEventListener("dragover", (event) => {
+    event.preventDefault();
+  });
+
+  task5Elements.wordBox.addEventListener("drop", (event) => {
+    event.preventDefault();
+    task5ReturnWordToBox(task5DraggedWord);
+  });
+
+  document.addEventListener("dragstart", (event) => {
+    const word = event.target.closest(".task5-word");
+    if (!word) {
+      return;
+    }
+
+    task5DraggedWord = word;
+    event.dataTransfer.setData("text/plain", word.dataset.word);
+    event.dataTransfer.effectAllowed = "move";
+  });
+
+  document.addEventListener("dragend", () => {
+    task5DraggedWord = null;
+    task5Elements.blanks.forEach((blank) => {
+      blank.classList.remove("is-drag-over");
+    });
+  });
+
+  task5Elements.checkButton.addEventListener("click", task5CheckAnswers);
+  task5Elements.resetButton.addEventListener("click", task5Reset);
+}
+
+if (
+  task5Elements.wordBox &&
+  task5Elements.blanks.length &&
+  task5Elements.checkButton &&
+  task5Elements.resetButton &&
+  task5Elements.result
+) {
+  task5InitEvents();
+}

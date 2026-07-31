@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Interaktywny trening odmiany zaimka który." />
+    <title>Który, która, które — trening</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <a class="back" href="../">← Wszystkie ćwiczenia</a>
+        <p class="eyebrow">Polski A2 · gramatyka</p>
+        <h1>Który, która, które</h1>
+        <p class="lead">Naucz się wybierać formę przez przypadek, rodzaj i liczbę — krok po kroku.</p>
+        <div class="hero-chips"><span>200 zadań w bazie</span><span>7 formatów</span><span>powtórka błędów</span></div>
+      </header>
+
+      <section class="theory" aria-labelledby="theory-title">
+        <div class="section-heading"><p class="step">Zanim zaczniesz</p><h2 id="theory-title">Reguła w pigułce</h2></div>
+        <div class="theory-grid">
+          <article class="note-card"><span class="number">01</span><h3>Liczba pojedyncza</h3><p>Jak <b>który, która, które</b> odmieniają się przymiotniki oraz: <b>czyj, jaki, ten, mój, twój, nasz, wasz</b>.</p></article>
+          <article class="note-card"><span class="number">02</span><h3>Liczba mnoga</h3><p><b>Męskoosobowy</b>: mężczyźni i grupy z co najmniej jednym mężczyzną. <b>Niemęskoosobowy</b>: kobiety, dzieci, zwierzęta i przedmioty.</p></article>
+        </div>
+        <div class="examples">
+          <div><span>opis / konkret</span><p>To jest osoba, <b>która</b> lubi zwierzęta.</p><p>To jest ten ptak, <b>który</b> siedzi na drzewie.</p></div>
+          <div><span>pytanie</span><p><b>Który</b> laptop jest twój?</p><p><b>Którego</b> dnia masz urodziny?</p></div>
+          <div><span>liczba mnoga</span><p>Mężczyźni, <b>którzy</b> lubią ser.</p><p>Psy, <b>które</b> lubią mięso.</p></div>
+        </div>
+        <aside class="warning"><b>Uwaga</b><span>To jest osoba, <strong>która</strong> lubi zwierzęta.</span><del>To jest osoba, jaka lubi zwierzęta.</del></aside>
+        <p class="animal-note">Pies i kot są rodzaju męskiego w liczbie pojedynczej, ale <b>psy i koty</b> w liczbie mnogiej są niemęskoosobowe.</p>
+
+        <details class="tables">
+          <summary>Tabela odmiany <span>rozwiń ↓</span></summary>
+          <div class="table-wrap">
+            <h3>Liczba pojedyncza</h3>
+            <table><thead><tr><th>przypadek</th><th>męski żyw.</th><th>męski nieżyw.</th><th>nijaki</th><th>żeński</th></tr></thead><tbody>
+              <tr><th>mianownik</th><td colspan="2">który</td><td>które</td><td>która</td></tr><tr><th>dopełniacz</th><td colspan="3">którego</td><td>której</td></tr><tr><th>celownik</th><td colspan="3">któremu</td><td>której</td></tr><tr><th>biernik</th><td>którego</td><td>który</td><td>które</td><td>którą</td></tr><tr><th>narzędnik</th><td colspan="3">którym</td><td>którą</td></tr><tr><th>miejscownik</th><td colspan="3">którym</td><td>której</td></tr>
+            </tbody></table>
+            <h3>Liczba mnoga</h3>
+            <table><thead><tr><th>przypadek</th><th>męskoosobowy</th><th>niemęskoosobowy</th></tr></thead><tbody>
+              <tr><th>mianownik</th><td>którzy</td><td>które</td></tr><tr><th>dopełniacz</th><td colspan="2">których</td></tr><tr><th>celownik</th><td colspan="2">którym</td></tr><tr><th>biernik</th><td>których</td><td>które</td></tr><tr><th>narzędnik</th><td colspan="2">którymi</td></tr><tr><th>miejscownik</th><td colspan="2">których</td></tr>
+            </tbody></table>
+          </div>
+        </details>
+      </section>
+
+      <section class="trainer" id="trainer" aria-labelledby="trainer-title">
+        <div id="startView">
+          <div class="section-heading"><p class="step">Czas na praktykę</p><h2 id="trainer-title">Ustaw długość rundy</h2><p>Wylosujemy zrównoważony zestaw z dużej bazy. W każdej rundzie spotkasz różne słowa, przypadki i typy zadań.</p></div>
+          <div class="syllabus" id="syllabus"></div>
+          <fieldset class="length-picker"><legend>Liczba zadań</legend><div id="lengthOptions"></div></fieldset>
+          <button class="button primary big" id="startBtn">Rozpocznij trening <span>→</span></button>
+        </div>
+
+        <div id="quizView" class="hidden">
+          <div class="quiz-top"><div><p class="step" id="exerciseKicker"></p><h2 id="exerciseTitle"></h2></div><div class="score"><span>Poprawne</span><b id="scoreText">0</b></div></div>
+          <div class="progress" aria-label="Postęp"><i id="progressBar"></i></div><p class="progress-text" id="progressText"></p>
+          <article class="question-card">
+            <div class="tag" id="questionTag"></div>
+            <p class="sentence" id="sentence"></p>
+            <div id="answerArea"></div>
+            <button class="hint-button hidden" id="hintBtn">＋ Podpowiedź</button>
+            <div class="hints hidden" id="hints"></div>
+            <div class="feedback hidden" id="feedback" role="status" aria-live="polite"></div>
+          </article>
+          <div class="actions"><button class="button primary" id="checkBtn">Sprawdź</button><button class="button primary hidden" id="nextBtn">Dalej →</button></div>
+        </div>
+
+        <div id="resultView" class="hidden">
+          <div class="result-hero"><span class="result-icon">✓</span><p class="step">Koniec rundy</p><h2>Twój wynik</h2><strong id="resultScore"></strong><p id="resultCopy"></p></div>
+          <section class="mistakes hidden" id="mistakesSection"><h3>Do poprawy</h3><div id="mistakesList"></div></section>
+          <div class="result-actions"><button class="button primary" id="restartBtn">Spróbuj ponownie</button><button class="button secondary hidden" id="retryBtn">Powtórz błędne odpowiedzi</button></div>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

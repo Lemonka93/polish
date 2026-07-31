@@ -469,6 +469,238 @@
 
         <div class="task4Result" id="task4Result"></div>
       </section>
+
+      <section class="task task-5">
+        <div class="task5-main">
+          <header class="task5-header">
+            <div class="task-number">5</div>
+            <div class="task5-intro">
+              <h2>
+                Kuba już mieszka w nowym pokoju w mieszkaniu studenckim. Teraz
+                rozmawia o nim z koleżanką.
+              </h2>
+            </div>
+          </header>
+
+          <div class="task5-dialogue">
+            <p>– <span>Cześć, Kasiu!</span></p>
+            <p>– <span>Cześć, Kuba, co słychać?</span></p>
+            <p>– <span>Mam nowe mieszkanie! Strasznie się cieszę!</span></p>
+            <p>– <span>Jakie jest twoje nowe mieszkanie?</span></p>
+            <p>
+              –
+              <span>
+                Jest bardzo fajne. Jest dosyć duże, ma 62 metry kwadratowe. Są
+                trzy pokoje. W jednym mieszkam ja z bardzo fajnym studentem
+                prawa. W drugim studentka ASP, a w trzecim chłopak, który
+                pracuje w pizzerii. Mój pokój jest
+                <span class="task5-blank" data-slot="1"><sup>1</sup></span>, bo jest w nim dużo
+                miejsca, i <span class="task5-blank" data-slot="2"><sup>2</sup></span>, bo jest
+                dużo światła. Kuchnia jest trochę
+                <span class="task5-blank" data-slot="3"><sup>3</sup></span>, nie ma w niej
+                żadnego okna. Łazienka jest
+                <span class="task5-blank" data-slot="4"><sup>4</sup></span>, bo czuję się w niej
+                komfortowo. Generalnie mieszkanie jest bardzo dobrze
+                <span class="task5-blank" data-slot="5"><sup>5</sup></span>, bo są w nim
+                wszystkie potrzebne meble i sprzęty. Jestem bardzo zadowolony.
+                Kasiu, a co u ciebie? Jak tam Szczecin? Gdzie teraz mieszkasz?
+                Jakie jest twoje mieszkanie?
+              </span>
+            </p>
+            <p>
+              –
+              <span>
+                Szczecin super! A mieszkanie… daj spokój! Nawet nie chce mi się
+                mówić. Tragedia! Wyobraź sobie, że…
+              </span>
+            </p>
+          </div>
+
+          <div class="task5-actions">
+            <button id="checkTask5" type="button">Sprawdź</button>
+            <button id="resetTask5" type="button">Reset</button>
+            <div class="task5-result" id="task5Result" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <aside class="task5-sidebar">
+          <div class="task5-word-box" id="task5WordBox" aria-label="Słowa do uzupełnienia">
+            <span class="task5-word" draggable="true" data-word="wyposażone">wyposażone</span>
+            <span class="task5-word" draggable="true" data-word="jasny">jasny</span>
+            <span class="task5-word" draggable="true" data-word="przestronny">przestronny</span>
+            <span class="task5-word" draggable="true" data-word="ciemna">ciemna</span>
+            <span class="task5-word" draggable="true" data-word="wygodna">wygodna</span>
+          </div>
+
+          <div class="task5-use-box">
+            <div class="task5-use-label">WARTO UŻYĆ</div>
+            <h3>JESTEM<br />ZADOWOLONY/A</h3>
+            <p>Jest bardzo fajne.</p>
+            <p>Podoba mi się.</p>
+            <p>Cieszę się, że…</p>
+            <p>Generalnie wszystko jest dobrze.</p>
+          </div>
+
+          <div class="task5-use-box">
+            <div class="task5-use-label">WARTO UŻYĆ</div>
+            <h3>NIE JESTEM<br />ZADOWOLONY/A</h3>
+            <p>Tragedia!</p>
+            <p>Nawet nie chce mi się mówić!</p>
+            <p>Daj spokój!</p>
+            <p>A weź!</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="task task-6" id="task6">
+        <header class="task-header task6-header">
+          <div class="task-number">6</div>
+          <h2 class="task-title">
+            Kasia szuka nowego pokoju w mieszkaniu studenckim. Prosi Kubę o
+            pomoc. Oglądają razem w internecie oferty pokoi do wynajęcia.
+          </h2>
+        </header>
+
+        <div class="task6-rooms">
+          <img src="img/5.png" alt="Pokój A z łóżkiem piętrowym i biurkiem" />
+          <img src="img/6.png" alt="Pokój B z dwoma pojedynczymi łóżkami" />
+        </div>
+
+        <div class="task6-bottom">
+          <div class="task6-phrases-box">
+            <div class="task6-use-label">WARTO UŻYĆ</div>
+            <table class="task6-phrases-table">
+              <thead>
+                <tr>
+                  <th>pytanie</th>
+                  <th>+</th>
+                  <th>−</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>Jak ci się podoba?</p>
+                    <p>Może ten?</p>
+                    <p>Dlaczego nie ten?</p>
+                    <p>Jak myślisz?</p>
+                    <p>Jak sądzisz?</p>
+                    <p>Jak uważasz?</p>
+                    <p>Co ci się w nim podoba?</p>
+                  </td>
+                  <td>
+                    <p>Dobrze, może być.</p>
+                    <p>Tak, zgadzam się.</p>
+                    <p>To dobry pomysł.</p>
+                    <p>Świetny pomysł!</p>
+                  </td>
+                  <td>
+                    <p>Nie podoba mi się.</p>
+                    <p>Nie zgadzam się z tobą.</p>
+                    <p>Może coś innego?</p>
+                    <p>Nie jestem przekonany/a.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <aside class="task6-example">
+            <h3>Przykład:</h3>
+            <div class="task6-dialogue">
+              <p>
+                <span>–</span>
+                <span>
+                  Kuba, zobacz. Mam dwie fajne oferty. Co myślisz? Który pokój
+                  podoba ci się bardziej?
+                </span>
+              </p>
+              <p>
+                <span>–</span>
+                <span>
+                  No nie wiem. To zależy czego szukasz. Na przykład ten pokój
+                  jest…
+                </span>
+              </p>
+              <p><span>–</span><span>…</span></p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="task task-7" id="task7">
+        <div class="task7-visual">
+          <div class="task7-markers">
+            <span class="task7-at" aria-hidden="true">@</span>
+            <div class="task-number">7</div>
+          </div>
+          <h2>Nietypowy dom.</h2>
+          <div class="task7-photo-wrap">
+            <img
+              src="img/7.png"
+              alt="Wnętrze bardzo wąskiego Domu Kereta"
+            />
+          </div>
+        </div>
+
+        <article class="task7-text">
+          <h2>DOM KERETA</h2>
+          <p>
+            „Najwęższy* dom świata” to instalacja artystyczna zlokalizowana w
+            Warszawie w dzielnicy* Wola, znajduje się między ścianami
+            kamienicy* przy ul. Żelaznej 74, a blokiem* przy Chłodnej 22.
+            Funkcjonuje od 2012 roku. Autorami instalacji artystycznej przy ul.
+            Żelaznej w Warszawie są architekt Jakub Szczęsny i grupa projektowa
+            Centrala. To jest pracownia dla izraelskiego pisarza Etgara Kereta
+            i miejsce różnych akcji kulturalnych.
+          </p>
+          <p>
+            Dom Kereta można odwiedzać rzadko. Kiedy w słynnym* Domu Kereta w
+            Warszawie są <em>dni otwarte</em>, za każdym razem pojawiają się*
+            tłumy* zwiedzających*.
+          </p>
+          <p>
+            Bilety na Dni Otwarte w Domu Kereta można kupić przez stronę
+            internetową:
+            <span class="task7-url">http://oferta.fundacjapsn.pl/produkt/dniotwarte/</span>
+          </p>
+          <footer>
+            na podstawie: <cite>Dom Kereta Warszawa. Tak wygląda w środku
+            najwęższy dom na świecie</cite>, www.gdansk.naszemiasto.pl<br />
+            oraz <cite>Dom Kereta</cite>, www.wikipedia.org
+          </footer>
+        </article>
+      </section>
+
+      <aside class="glossary-box" aria-labelledby="glossary-title">
+        <h2 id="glossary-title">słowniczek</h2>
+        <ul>
+          <li>
+            najwęższy – bardzo wąski (wąski – węższy – najwęższy)
+          </li>
+          <li>dzielnica – dystrykt, część miasta</li>
+          <li>kamienica – bardzo stary, wysoki budynek</li>
+          <li>blok – wysoki budynek, ma kilka pięter</li>
+          <li>słynny – znany, popularny</li>
+          <li>pojawiać się – przychodzić</li>
+          <li>tłum – bardzo dużo ludzi</li>
+          <li>zwiedzający – osoba, która odwiedza jakieś miejsce</li>
+        </ul>
+      </aside>
+
+      <section class="task task-8" aria-label="Zadanie 8">
+        <div class="task-number">8</div>
+
+        <div class="task8-use-box">
+          <div class="task8-use-label">WARTO UŻYĆ</div>
+          <h2>KONSTRUKCJE</h2>
+          <p>W moim kraju jest tak samo…</p>
+          <p>W moim kraju jest podobnie…</p>
+          <p>W moim kraju jest inaczej…</p>
+          <p>To jest tak, że…</p>
+          <p>Myślę, że… / Uważam, że… / Sądzę, że…</p>
+        </div>
+      </section>
     </main>
 
     <script src="./script.js"></script>
