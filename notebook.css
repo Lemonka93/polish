@@ -1,0 +1,68 @@
+.lesson-notebook-launcher,
+.lesson-notebook,
+.lesson-notebook * { box-sizing: border-box; }
+
+.lesson-notebook-launcher {
+  position: fixed; right: 22px; bottom: 22px; z-index: 2147483646;
+  display: inline-flex; align-items: center; gap: 8px; min-width: 0;
+  margin: 0; padding: 11px 15px; border: 2px solid #8d6b18;
+  border-radius: 999px; background: #f2b92f; color: #2d2617;
+  box-shadow: 0 7px 20px rgba(52, 42, 17, 0.24);
+  font: 700 15px/1 Arial, sans-serif; letter-spacing: 0;
+  text-transform: none; cursor: pointer;
+}
+.lesson-notebook-launcher:hover { background: #ffc943; transform: translateY(-1px); }
+.lesson-notebook-launcher[hidden], .lesson-notebook[hidden] { display: none; }
+
+.lesson-notebook {
+  position: fixed; z-index: 2147483647;
+  width: min(390px, calc(100vw - 24px)); margin: 0; overflow: hidden;
+  border: 2px solid #8d6b18; border-radius: 15px; background: #fffdf3;
+  color: #28241c; box-shadow: 0 15px 44px rgba(32, 27, 14, 0.28);
+  font-family: Arial, sans-serif;
+}
+.lesson-notebook-header {
+  display: flex; align-items: center; gap: 8px; min-height: 48px;
+  padding: 6px 7px 6px 12px; background: #f2b92f;
+  cursor: grab; touch-action: none; user-select: none;
+}
+.lesson-notebook.is-dragging .lesson-notebook-header { cursor: grabbing; }
+.lesson-notebook-grip { color: #705716; font-size: 20px; line-height: 1; letter-spacing: -3px; }
+.lesson-notebook-title {
+  flex: 1; margin: 0; color: #2d2617;
+  font: 800 16px/1.1 Arial, sans-serif; letter-spacing: 0.02em;
+}
+.lesson-notebook-controls { display: flex; gap: 5px; }
+.lesson-notebook-control {
+  display: grid; place-items: center; width: 34px; height: 32px; min-width: 34px;
+  margin: 0; padding: 0; border: 1px solid rgba(74, 55, 11, 0.35);
+  border-radius: 8px; background: rgba(255, 255, 255, 0.72); color: #342b17;
+  box-shadow: none; font: 800 14px/1 Arial, sans-serif; letter-spacing: 0;
+  text-transform: none; cursor: pointer;
+}
+.lesson-notebook-control:hover { background: #fff; transform: none; }
+.lesson-notebook-control:focus-visible,
+.lesson-notebook-launcher:focus-visible,
+.lesson-notebook-text:focus-visible {
+  outline: 3px solid rgba(43, 91, 158, 0.5); outline-offset: 2px;
+}
+.lesson-notebook-body { padding: 10px; }
+.lesson-notebook-text {
+  display: block; width: 100%; height: 250px; min-height: 130px;
+  margin: 0; padding: 13px 14px; resize: both;
+  border: 1px solid #d5c894; border-radius: 10px;
+  background: repeating-linear-gradient(to bottom, #fffef8 0, #fffef8 calc(1.55em - 1px), #e9e2c8 calc(1.55em - 1px), #e9e2c8 1.55em);
+  color: #29251d; box-shadow: inset 0 1px 4px rgba(67, 54, 22, 0.08);
+  font-family: Georgia, "Times New Roman", serif; line-height: 1.55;
+}
+.lesson-notebook-status {
+  min-height: 16px; margin: 6px 3px 0; color: #756944;
+  font: 12px/1.2 Arial, sans-serif; text-align: right;
+}
+.lesson-notebook.is-collapsed .lesson-notebook-body { display: none; }
+
+@media (max-width: 520px) {
+  .lesson-notebook-launcher { right: 12px; bottom: 12px; }
+  .lesson-notebook { width: calc(100vw - 16px); }
+  .lesson-notebook-text { height: 210px; }
+}
