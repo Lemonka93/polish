@@ -1,4 +1,26 @@
 (() => {
+  const notebookScript = document.currentScript;
+  const projectHomeUrl = notebookScript
+    ? new URL("./", notebookScript.src)
+    : new URL("../", window.location.href);
+  const currentPageDirectory = new URL("./", window.location.href);
+
+  if (currentPageDirectory.href !== projectHomeUrl.href) {
+    const existingHomeLink = [...document.querySelectorAll("a[href]")].find(
+      (link) => new URL(link.href, window.location.href).href === projectHomeUrl.href,
+    );
+    const homeLink = existingHomeLink || document.createElement("a");
+
+    homeLink.href = projectHomeUrl.href;
+    homeLink.classList.add("course-home-link");
+    homeLink.setAttribute("aria-label", "Wróć na stronę główną");
+    homeLink.innerHTML = '<span aria-hidden="true">←</span><span>Strona główna</span>';
+
+    if (!existingHomeLink) {
+      document.body.append(homeLink);
+    }
+  }
+
   const storageKey = "pl-tr-lesson-notebook-v1";
   const defaults = { text: "", fontSize: 18, isOpen: false, isCollapsed: false, x: null, y: null };
   const load = () => {

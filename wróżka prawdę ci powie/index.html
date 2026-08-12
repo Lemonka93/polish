@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ćwiczenie czasu przyszłego w języku polskim." />
+    <title>Wróżka prawdę ci powie</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../notebook.css" />
+  </head>
+  <body>
+    <main class="page">
+      <a class="back" href="../">← Wszystkie ćwiczenia</a>
+
+      <section class="task task-1">
+        <header class="task-header">
+          <div class="task-number">1</div>
+          <div>
+            <h1>Będę, będziesz, będzie.</h1>
+            <p>Proszę dopasować teksty do zaimków osobowych.</p>
+          </div>
+        </header>
+
+        <div class="task-workspace">
+          <div class="exercise-column">
+            <div class="exercise-layout">
+              <div class="matching-table" aria-label="Dopasuj zdania do zaimków">
+            <div class="matching-head">zaimek</div>
+            <div class="matching-head">tekst</div>
+
+            <div class="pronoun">JA</div>
+            <div class="drop-zone" data-pronoun="ja"></div>
+            <div class="pronoun">TY</div>
+            <div class="drop-zone" data-pronoun="ty"></div>
+            <div class="pronoun">ON</div>
+            <div class="drop-zone" data-pronoun="on"></div>
+            <div class="pronoun">ONA</div>
+            <div class="drop-zone" data-pronoun="ona"></div>
+            <div class="pronoun">ONO</div>
+            <div class="drop-zone" data-pronoun="ono"></div>
+            <div class="pronoun">MY</div>
+            <div class="drop-zone" data-pronoun="my"></div>
+            <div class="pronoun">WY</div>
+            <div class="drop-zone" data-pronoun="wy"></div>
+            <div class="pronoun">ONI</div>
+            <div class="drop-zone" data-pronoun="oni"></div>
+            <div class="pronoun">ONE</div>
+            <div class="drop-zone" data-pronoun="one"></div>
+              </div>
+
+              <aside class="sentence-pool" id="sentencePool" aria-label="Teksty do dopasowania"></aside>
+            </div>
+
+            <div class="actions">
+              <button id="checkAnswers" type="button">Sprawdź</button>
+              <button id="resetTask" type="button">Reset</button>
+              <p id="result" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <aside class="remember-box">
+            <div class="remember-label">TRZEBA PAMIĘTAĆ</div>
+            <h2>CZAS PRZYSZŁY</h2>
+            <div class="grammar-table">
+              <span>(ja) będę</span><span>robić / robił, robiła</span>
+              <span>(ty) będziesz</span><span>robić / robił, robiła</span>
+              <span>on / ona / ono będzie</span><span>robić / robił, robiła, robiło</span>
+              <span>(my) będziemy</span><span>robić / robili, robiły</span>
+              <span>(wy) będziecie</span><span>robić / robili, robiły</span>
+              <span>oni / one będą</span><span>robić / robili, robiły</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="task task-2">
+        <header class="task-header task2-header">
+          <div class="task-number">2</div>
+          <p>
+            Proszę porozmawiać z koleżanką / kolegą. Proszę zapytać:
+            „Co będziesz robić…?”. Proszę używać słów z ramki.
+          </p>
+        </header>
+
+        <div class="task2-content">
+          <div class="task2-left">
+            <div class="task2-boxes">
+              <div class="time-box">
+                <p class="wide">dzisiaj wieczorem</p>
+                <p>jutro</p><p>pojutrze</p>
+                <p class="wide">w następny wtorek</p>
+                <p>za trzy dni</p><p>za tydzień</p>
+                <p>za miesiąc</p><p>za rok</p>
+                <p class="wide">w przyszłym tygodniu</p>
+                <p class="wide">w przyszłym miesiącu</p>
+                <p class="wide">w przyszłym roku</p>
+              </div>
+
+              <div class="certainty-box">
+                <div class="certainty-label">TRZEBA UŻYĆ</div>
+                <h2>WYRAŻANIE<br />PEWNOŚCI<br />I NIEPEWNOŚCI</h2>
+                <p>na pewno (100%)</p>
+                <p>być może (50%)</p>
+                <p>na pewno nie (0%)</p>
+              </div>
+            </div>
+
+            <div class="task2-example">
+              <h2>Przykład:</h2>
+              <p>Wiktor: Co będziesz robić dzisiaj wieczorem?</p>
+              <p>
+                Zosia: Dzisiaj wieczorem <strong>na pewno</strong> będę czytać
+                książkę i…
+              </p>
+              <p>
+                Wiktor: Moja koleżanka / Mój kolega dzisiaj wieczorem
+                <strong>na pewno</strong> będzie czytać książkę i…
+              </p>
+            </div>
+          </div>
+
+          <img
+            class="task2-person"
+            src="img/1.png"
+            alt="Mężczyzna zastanawiający się nad odpowiedzią"
+          />
+        </div>
+      </section>
+
+      <section class="task task-3">
+        <header class="task-header task3-header">
+          <div class="task-number">3</div>
+          <p>Proszę popatrzeć na fotografie i opowiedzieć o tych osobach.</p>
+        </header>
+
+        <div class="people-grid">
+          <article class="person-card">
+            <img src="img/2.png" alt="Chłopiec czytający książkę" />
+            <div class="person-prompts">
+              <p>Myślę, że ten chłopiec bardzo lubi czytać i uczyć się.</p>
+              <p><strong>Być może</strong> w przyszłości on będzie profesorem.</p>
+              <p>
+                Będzie pracować na uniwersytecie, będzie pisać książki i uczyć
+                studentów.
+              </p>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <img src="img/3.png" alt="Dziewczynka z psem" />
+            <div class="person-prompts">
+              <p>Myślę, że ta dziewczynka bardzo lubi …… .</p>
+              <p><strong>Być może</strong> w przyszłości ona będzie …… .</p>
+              <p>
+                <strong>Codziennie</strong> będzie pracować w przychodni
+                weterynaryjnej, będzie …… .
+              </p>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <img src="img/4.png" alt="Dziewczynka bawiąca się klockami" />
+            <div class="person-prompts">
+              <p>Myślę, że… .</p>
+              <p><strong>Być może</strong>… .</p>
+              <p><strong>Codziennie</strong>… .</p>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <img src="img/5.png" alt="Chłopiec grający w piłkę nożną" />
+            <div class="person-prompts" aria-label="Miejsce na wypowiedź"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="task task-4">
+        <header class="task-header task4-header">
+          <div class="task-number">4</div>
+          <div>
+            <h2>Ania i Adam planują następny rok. Co oni będą robić?</h2>
+            <p>
+              <span>A.</span> Proszę narysować ilustracje w pustych miejscach w
+              tabeli, a potem proszę opowiedzieć o planach Ani i Adama.
+            </p>
+          </div>
+        </header>
+
+        <p class="task4-example">
+          <strong>Przykład:</strong> W styczniu Ania i Adam będą mieć ślub. W
+          lutym oni…
+        </p>
+
+        <div class="task4-planner">
+          <h3>• ANIA i ADAM •</h3>
+          <div class="months-grid">
+            <figure class="month-card">
+              <div class="month-picture"><img src="img/6.png" alt="Ślub Ani i Adama" /></div>
+              <figcaption>W styczniu…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture"><img src="img/7.png" alt="Wyjazd na narty" /></div>
+              <figcaption>W lutym…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture is-empty" aria-label="Puste miejsce na ilustrację"></div>
+              <figcaption>W marcu…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture"><img src="img/8.png" alt="Praca w gabinecie" /></div>
+              <figcaption>W kwietniu…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture is-empty" aria-label="Puste miejsce na ilustrację"></div>
+              <figcaption>W maju…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture is-empty" aria-label="Puste miejsce na ilustrację"></div>
+              <figcaption>W czerwcu…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture is-empty" aria-label="Puste miejsce na ilustrację"></div>
+              <figcaption>W lipcu…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture"><img src="img/9.png" alt="Podróż samolotem" /></div>
+              <figcaption>W sierpniu…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture"><img src="img/10.png" alt="Nowy samochód" /></div>
+              <figcaption>We wrześniu…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture is-empty" aria-label="Puste miejsce na ilustrację"></div>
+              <figcaption>W październiku…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture is-empty" aria-label="Puste miejsce na ilustrację"></div>
+              <figcaption>W listopadzie…</figcaption>
+            </figure>
+            <figure class="month-card">
+              <div class="month-picture"><img src="img/11.png" alt="Choinka" /></div>
+              <figcaption>W grudniu…</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="task4-part-b">
+          <span>B.</span>
+          <p>
+            Proszę zapytać koleżankę / kolegę o jego wersję, a następnie proszę
+            razem wybrać najbardziej interesującą historię.
+          </p>
+        </div>
+        <p class="task4-example">
+          <strong>Przykład:</strong> Co Ania i Adam będą robić w marcu?
+        </p>
+      </section>
+
+      <section class="task task-5">
+        <header class="task-header task5-header">
+          <div class="task-number">5</div>
+          <div>
+            <p>
+              <span>A.</span> Proszę zadać pytania do podkreślonych fragmentów
+              zdań. Proszę używać słów podanych w ramce.
+            </p>
+          </div>
+        </header>
+
+        <div class="question-words">
+          <span>Jak często?</span><span>Dlaczego?</span><span>Kto?</span>
+          <span>Jaka?</span><span>Co?</span><span>Kiedy?</span>
+          <span>Z kim?</span><span>Jak?</span><span>Gdzie?</span>
+        </div>
+
+        <div class="future-scenes">
+          <figure class="future-card">
+            <div class="future-image"><span>1</span><img src="img/12.png" alt="Koncert jazzowy" /></div>
+            <figcaption>W następny czwartek będę na koncercie jazzowym <u>w Berlinie</u>.</figcaption>
+          </figure>
+          <figure class="future-card">
+            <div class="future-image"><span>2</span><img src="img/13.png" alt="Mężczyźni grający na komputerze" /></div>
+            <figcaption>Po południu będziemy <u>z Bartkiem</u> grać na komputerze.</figcaption>
+          </figure>
+          <figure class="future-card">
+            <div class="future-image"><span>3</span><img src="img/14.png" alt="Kamera podczas konferencji" /></div>
+            <figcaption>W przyszłym roku sytuacja ekonomiczna będzie <u>bardzo dobra</u>.</figcaption>
+          </figure>
+          <figure class="future-card">
+            <div class="future-image"><span>4</span><img src="img/15.png" alt="Bagaż na lotnisku" /></div>
+            <figcaption>W przyszłym roku <u>często</u> będę latać do Korei i do Indii.</figcaption>
+          </figure>
+          <figure class="future-card">
+            <div class="future-image"><span>5</span><img src="img/16.png" alt="Ewa i Igor nad morzem" /></div>
+            <figcaption>W tym roku <u>Ewa i Igor</u> będą odpoczywać nad polskim morzem.</figcaption>
+          </figure>
+          <figure class="future-card">
+            <div class="future-image"><span>6</span><img src="img/17.png" alt="Pani Marta na urlopie" /></div>
+            <figcaption>Pani Marta nie będzie pracować, <u>bo będzie mieć urlop</u>.</figcaption>
+          </figure>
+          <figure class="future-card">
+            <div class="future-image"><span>7</span><img src="img/18.png" alt="Prognoza pogody" /></div>
+            <figcaption>W weekend będzie zimno, ale <u>słonecznie</u>.</figcaption>
+          </figure>
+          <figure class="future-card">
+            <div class="future-image"><span>8</span><img src="img/19.png" alt="Kobiety podczas spotkania" /></div>
+            <figcaption><u>Jutro rano</u> moja mama będzie mieć ważne spotkanie.</figcaption>
+          </figure>
+          <figure class="future-card">
+            <div class="future-image"><span>9</span><img src="img/20.png" alt="Lekcja języka francuskiego" /></div>
+            <figcaption>One nie będą uczyć się <u>francuskiego</u> w tym tygodniu.</figcaption>
+          </figure>
+        </div>
+
+        <p class="task5-example">
+          <strong>Przykład (Fot. 1.):</strong> Gdzie będziesz na koncercie
+          jazzowym w następny czwartek?
+        </p>
+
+        <div class="task5-part-b">
+          <span>B.</span>
+          <p>
+            Proszę używać słów podanych w ramce z ćwiczenia 5A. Proszę
+            przygotować 5–6 pytań o plany na przyszłość i zadać je koleżance /
+            koledze, zrobić notatki, a następnie opowiedzieć 3 ciekawe fakty o
+            niej / o nim.
+          </p>
+        </div>
+        <p class="task5-example"><strong>Przykład:</strong> Gdzie będziesz spędzać wakacje?</p>
+      </section>
+
+      <section class="task task-6">
+        <header class="task-header task6-header">
+          <div class="task-number">6</div>
+          <div>
+            <h2>Co będziesz musiała / musiał robić jutro po południu?</h2>
+            <p>
+              Proszę zadać pytania z tabeli koleżance / koledze, zanotować jej /
+              jego odpowiedzi. Potem proszę je zaprezentować na forum.
+            </p>
+          </div>
+        </header>
+
+        <div class="modal-legend" aria-label="Legenda czasowników modalnych">
+          <span><b class="modal-icon want">☺</b> chcieć</span>
+          <span><b class="modal-icon can">OK</b> móc</span>
+          <span><b class="modal-icon must">!</b> musieć</span>
+        </div>
+
+        <div class="interview-wrap">
+          <table class="interview-table">
+            <thead>
+              <tr><th colspan="4">PYTANIE:</th><th>ODPOWIEDŹ:</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1.</td><td>Co będziesz</td><td><b class="modal-icon want">☺</b></td><td>robić jutro po południu?</td><td class="sample-answer">Jutro po południu ona będzie chciała / on będzie chciał…</td></tr>
+              <tr><td>2.</td><td>Co będziesz</td><td><b class="modal-icon must">!</b></td><td>robić pojutrze?</td><td></td></tr>
+              <tr><td>3.</td><td>Co będziesz</td><td><b class="modal-icon can">OK</b></td><td>robić w przyszłym tygodniu?</td><td></td></tr>
+              <tr><td>4.</td><td>Co będziesz</td><td><b class="modal-icon must">!</b></td><td>robić w następnym roku?</td><td></td></tr>
+              <tr><td>5.</td><td>Co będziesz</td><td><b class="modal-icon must">!</b></td><td>robić w weekend?</td><td></td></tr>
+              <tr><td>6.</td><td>Co będziesz</td><td><b class="modal-icon want">☺</b></td><td>robić w wakacje?</td><td></td></tr>
+              <tr><td>7.</td><td>Co będziesz</td><td><b class="modal-icon can">OK</b></td><td>robić za 10 lat?</td><td></td></tr>
+              <tr><td>8.</td><td>Co będziesz</td><td><b class="modal-icon want">☺</b></td><td>robić, kiedy będziesz na emeryturze?</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="modal-remember">
+          <div class="modal-remember-label">TRZEBA PAMIĘTAĆ</div>
+          <h2>CZAS PRZYSZŁY · CZASOWNIKI MODALNE</h2>
+          <div class="modal-columns">
+            <section>
+              <h3>chcieć <b class="modal-icon want">☺</b></h3>
+              <p>(ja) będę chciał / chciała</p><p>(ty) będziesz chciał / chciała</p>
+              <p>on będzie chciał</p><p>ona będzie chciała</p><p>ono będzie chciało</p>
+              <p>(my) będziemy chcieli / chciały</p><p>(wy) będziecie chcieli / chciały</p>
+              <p>oni będą chcieli</p><p>one będą chciały</p>
+            </section>
+            <section>
+              <h3>móc <b class="modal-icon can">OK</b></h3>
+              <p>(ja) będę mógł / mogła</p><p>(ty) będziesz mógł / mogła</p>
+              <p>on będzie mógł</p><p>ona będzie mogła</p><p>ono będzie mogło</p>
+              <p>(my) będziemy mogli / mogły</p><p>(wy) będziecie mogli / mogły</p>
+              <p>oni będą mogli</p><p>one będą mogły</p>
+            </section>
+            <section>
+              <h3>musieć <b class="modal-icon must">!</b></h3>
+              <p>(ja) będę musiał / musiała</p><p>(ty) będziesz musiał / musiała</p>
+              <p>on będzie musiał</p><p>ona będzie musiała</p><p>ono będzie musiało</p>
+              <p>(my) będziemy musieli / musiały</p><p>(wy) będziecie musieli / musiały</p>
+              <p>oni będą musieli</p><p>one będą musiały</p>
+            </section>
+          </div>
+          <p class="modal-formula">Będę chciał / mógł / musiał + bezokolicznik</p>
+          <div class="modal-examples">
+            <p><strong>Przykład:</strong><br />W wakacje moi przyjaciele <b>będą chcieli pojechać</b> do Włoch.</p>
+            <p><strong>Przykład:</strong><br />Czy <b>będziemy mogli oglądać</b> film po kolacji?</p>
+            <p><strong>Przykład:</strong><br />Dzisiaj wieczorem <b>będę musiała pracować</b> przy komputerze.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="task task-7">
+        <header class="task-header task7-header">
+          <div class="task-number">7</div>
+          <p><span>A.</span> Proszę przeczytać tekst i odpowiedzieć na pytania:</p>
+        </header>
+
+        <div class="andrzejki-top">
+          <ol class="andrzejki-questions">
+            <li>
+              Kiedy jest wieczór andrzejkowy?
+              <em>Przykład: Wieczór andrzejkowy jest 29 listopada (imieniny Andrzeja).</em>
+            </li>
+            <li>Co ludzie robią w Polsce w wieczór andrzejkowy?</li>
+            <li>Jaka jest najpopularniejsza andrzejkowa wróżba?</li>
+            <li>Jaki charakter miały wróżby andrzejkowe dawno temu?</li>
+            <li>Jaki charakter mają dzisiaj andrzejkowe wróżby?</li>
+          </ol>
+
+          <article class="andrzejki-text">
+            <h2>ANDRZEJKI W POLSCE</h2>
+            <p>
+              Andrzejki to wieczór 29 listopada (ten dzień to imieniny
+              Andrzeja), kiedy wszyscy w Polsce wróżą*.
+            </p>
+            <p>
+              Najpopularniejsza wróżba to lanie wosku*. Jak to się robi?
+              Najpierw lejemy wosk przez klucz na wodę. Potem wyjmujemy woskową
+              figurkę z wody i oglądamy jej cień na ścianie. Kształt*, który
+              widzimy na ścianie, to wróżba na przyszły rok.
+            </p>
+            <p>
+              Dawno temu wróżby miały charakter matrymonialny. Młode kobiety
+              spotykały się i wróżyły, żeby poznać imię swojego przyszłego
+              męża. Dzisiaj andrzejkowe wróżby to forma zabawy dla dzieci i
+              młodzieży np. w szkołach, a dla dorosłych np. w klubach.
+            </p>
+            <aside class="andrzejki-glossary">
+              <h3>słowniczek</h3>
+              <p>* wróżyć – mówić, co będzie w przyszłości</p>
+              <p>* wosk – substancja, z której robi się świeczki</p>
+              <p>* kształt – forma</p>
+            </aside>
+          </article>
+        </div>
+
+        <div class="andrzejki-photos">
+          <img src="img/21.png" alt="Kobiety podczas wieczoru andrzejkowego" />
+          <img src="img/22.png" alt="Cień figurki z wosku na ścianie" />
+        </div>
+
+        <div class="andrzejki-part-b">
+          <span>B.</span>
+          <p>
+            Jest wieczór andrzejkowy 29 listopada. Pani / Pan razem z koleżanką
+            / kolegą robią wróżby. Proszę wybrać 3 ilustracje (cienie na ścianie
+            rzucane przez figurki z wosku) dla koleżanki / kolegi i powiedzieć,
+            co pani / pana koleżanka / kolega będzie robić w przyszłym roku.
+            Potem proszę zamienić się rolami.
+          </p>
+        </div>
+
+        <div class="fortune-example">
+          <span class="credit-card-shadow" aria-label="Cień karty kredytowej"></span>
+          <p>
+            <strong>Przykład:</strong><br />Myślę, że to jest karta kredytowa.
+            To znaczy, że w przyszłym roku będziesz zarabiać dużo pieniędzy i…
+          </p>
+        </div>
+
+        <div class="fortune-grid" aria-label="Cienie do wróżenia">
+          <img src="img/23.png" alt="Cień okularów" />
+          <img src="img/24.png" alt="Cień dziecka" />
+          <img src="img/25.png" alt="Cień koła" />
+          <img src="img/26.png" alt="Cień samolotu" />
+          <img src="img/27.png" alt="Cień długopisu" />
+          <img src="img/28.png" alt="Cień lizaka" />
+          <img src="img/29.png" alt="Cień tortu" />
+          <img src="img/30.png" alt="Cień pierścionka" />
+        </div>
+      </section>
+
+      <section class="task task-8">
+        <header class="task-header task8-header">
+          <div class="task-number">8</div>
+          <p>
+            <span>A.</span> Pani / Pana koleżanka / kolega chce iść do wróżki,
+            żeby poznać przyszłość. Prosi panią / pana o pomoc, ponieważ chce się
+            przygotować do tej rozmowy. Proszę dokończyć listę pytań do wróżki.
+            Proszę sugerować się ilustracjami, które są pod listą pytań.
+          </p>
+        </header>
+
+        <div class="fortune-questions-layout">
+          <ol class="fortune-questions">
+            <li>Czy w przyszłym roku będę miała / miał szczęście w miłości?</li>
+            <li>Czy będę bogata / bogaty?</li>
+            <li>Dokąd będę <span></span>?</li>
+            <li><span></span>?</li>
+            <li><span></span>?</li>
+            <li><span></span>?</li>
+            <li><span></span>?</li>
+            <li><span></span>?</li>
+          </ol>
+          <img class="fortune-teller" src="img/31.png" alt="Wróżka z kryształową kulą" />
+        </div>
+
+        <img
+          class="fortune-topics"
+          src="img/32.png"
+          alt="Ilustracje tematów wróżby: miłość, pieniądze, podróże, dziecko, przyjaciele, zdrowie, kariera i dom"
+        />
+
+        <div class="task8-part-b">
+          <span>B.</span>
+          <p>
+            Pani / Pana koleżanka / kolega jest już u wróżki. Ma ze sobą listę
+            pytań. Proszę odegrać rolę wróżki i odpowiedzieć na pytania koleżanki
+            / kolegi.
+          </p>
+        </div>
+
+        <div class="fortune-dialogue-layout">
+          <img src="img/33.png" alt="Szczęśliwa para jadąca rowerem" />
+          <div class="fortune-dialogue">
+            <h2>Przykład:</h2>
+            <p>
+              <span>–</span>
+              <span>Czy w przyszłym roku będę miała / miał szczęście w miłości?</span>
+            </p>
+            <p>
+              <span>–</span>
+              <span>
+                Tak, w przyszłym roku będzie miała pani / pan dużo szczęścia w
+                miłości, ale dopiero latem. Widzę spontaniczną wycieczkę do
+                Paryża, kawiarnię, rogaliki i tajemniczą osobę, która siedzi z
+                panią / panem przy stoliku. Widzę też wspólne wycieczki rowerem
+                nad Sekwaną. To początek wielkiej miłości. Mogę zasugerować kurs
+                języka francuskiego już teraz.
+              </span>
+            </p>
+            <p><span>–</span><span>Ooo!…</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+    <script src="../notebook.js"></script>
+  </body>
+</html>
